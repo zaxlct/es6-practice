@@ -1,12 +1,19 @@
 <template>
 <div id="app">
-  <el-card class="the_Toods_container">
+  <el-card class="container">
     <el-input class="input" @keyup.enter.native="addTodo" v-model.trim="text"></el-input>
-    <ul :class="[{delete_todo: todo.isComplete}, 'todo_list']" v-for="todo in todoListComputed" :key="todo.id" @click="todoCompleteChange(todo.id)">
-      <li class="todo">
-        {{todo.text}}
-        <el-button class="delete_btn" type="text" icon="el-icon-delete" @click.stop="deleteTodo(todo.id)"></el-button>
-      </li>
+    <ul class="todo_list">
+      <transition-group name="fade">
+        <li
+          :class="[{delete_todo: todo.isComplete}, 'todo']"
+          v-for="todo in todoListComputed"
+          :key="todo.id"
+          @click="todoCompleteChange(todo.id)"
+        >
+          {{todo.text}}
+          <el-button class="delete_btn" type="text" icon="el-icon-delete" @click.stop="deleteTodo(todo.id)"></el-button>
+        </li>
+      </transition-group>
     </ul>
 
     <el-button @click="currentStatus = 'ALL'"> 全部 {{todoList.length}}</el-button>
@@ -79,7 +86,7 @@ export default {
 
   methods: {
     // 模拟从服务器请求数据
-    _fetchData: () => new Promise(resolve => setTimeout(() => resolve(mockData), 2000)),
+    _fetchData: () => new Promise(resolve => setTimeout(() => resolve(mockData), 1500)),
 
     addTodo () {
       const { text } = this
@@ -116,10 +123,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-.the_Toods_container {
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.container {
   margin-top: 200px;
   margin-left: 100px;
   padding-left: 20px;
