@@ -1,4 +1,4 @@
-# 通过一个简单的 TODO 项目来练习 ES6
+# 通过一个简单的 TODO 项目来练习 ES6 和 Vue
 ## 启动项目
 - `npm i`
 - `npm start`
