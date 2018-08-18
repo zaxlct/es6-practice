@@ -1,5 +1,5 @@
 # 通过一个简单的 TODO 项目来练习 ES6 和 Vue
-
+![项目演示](./example.gif)
 ## 安装环境
 - node 版本需要大于 7.0
 - 给 npm 设置 taobao 的 registry
@@ -18,8 +18,8 @@ npm start
 
 ## 学习思路
 - 先不要着急去看 App.vue 里的源码，启动项目看到效果后，先自己手动实现
-- 自己实现后，再对比源码进行
-- 务必理解 App.vue 里的每一行代码
+- 自己实现后，再对比源码
+- 理解 App.vue 里的每一行代码
 
 ## 参考资料
 - 书籍：[《ES6 标准入门》第三版](http://es6.ruanyifeng.com/)
