@@ -29,8 +29,8 @@ npm start
 - 视频教程：[《Promise 入门》](https://www.imooc.com/learn/949)
 - 视频教程：[《Vue2.5开发去哪儿网App 从零基础入门到实战项目》](https://coding.imooc.com/class/203.html)（需付费）
 
-## 如何提问
+## 最后
 - 如果你有更好的建议或者遇到一些问题，可在 issues 里提问，或直接 Pull Request
 - [提问的智慧](https://github.com/tvvocold/How-To-Ask-Questions-The-Smart-Way)
 - [个人博客](https://www.jianshu.com/u/4152d9aab276)
-- QQ 交流群 163801325（聊天，斗图，学习，交流。伸手党勿进）
+- QQ 交流群 163801325（聊天，斗图，学习，交流。伸手党勿进）
