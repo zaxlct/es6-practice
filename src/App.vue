@@ -50,15 +50,18 @@ export default {
         todoList
       } = this
       if (currentStatus === ALL) return todoList
-      if (currentStatus === COMPLETE) return todoList.filter(todo => todo.isComplete)
-      if (currentStatus === TODO) return todoList.filter(todo => !todo.isComplete)
+      if (currentStatus === COMPLETE) return todoList.filter(todo => todo.isComplete) // 单行语句可省略 {}
+      if (currentStatus === TODO) return todoList.filter(todo => !todo.isComplete) // 单行语句可省略 {}
     },
     todoCompletedLength () {
       // 计算已完成的总数
       return this.todoList.reduce((sum, todo) => sum + Number(todo.isComplete), 0)
     }
+    // 虽然单行语句可省略 {}，但是由于箭头函数没有 this，所以这里并不能用单行语句的写法
+    // todoCompletedLength: () => this.todoList.reduce((sum, todo) => sum + Number(todo.isComplete), 0)
   },
 
+  // 单行语句可省略 {}
   data: () => ({
     text: '',
     todoList: [
@@ -86,7 +89,18 @@ export default {
 
   methods: {
     // 模拟从服务器请求数据
+    // 单行语句可省略 {}
     _fetchData: () => new Promise(resolve => setTimeout(() => resolve(mockData), 1500)),
+
+    /** 如果不使用 ES6，没有对比就没有伤害
+    _fetchData: function () {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve(mockData)
+        }, 1500)
+      })
+    },
+    **/
 
     addTodo () {
       const { text } = this
