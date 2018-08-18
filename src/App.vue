@@ -17,8 +17,8 @@
     </ul>
 
     <el-button @click="currentStatus = 'ALL'"> 全部 {{todoList.length}}</el-button>
-    <el-button @click="currentStatus = 'COMPLETE'"> 已完成 {{todoCompletedLength}}</el-button>
-    <el-button @click="currentStatus = 'TODO'"> 未完成 {{todoList.length - todoCompletedLength}}</el-button>
+    <el-button @click="currentStatus = 'COMPLETE'"> 已完成 {{todoCompletedNum}}</el-button>
+    <el-button @click="currentStatus = 'TODO'"> 未完成 {{todoList.length - todoCompletedNum}}</el-button>
   </el-card>
 </div>
 </template>
@@ -31,7 +31,7 @@ const mockData = [
     isComplete: false
   },
   {
-    id: 7,
+    id: 8,
     text: '今天天气不错',
     isComplete: false
   }
@@ -53,12 +53,12 @@ export default {
       if (currentStatus === COMPLETE) return todoList.filter(todo => todo.isComplete) // 单行语句可省略 {}
       if (currentStatus === TODO) return todoList.filter(todo => !todo.isComplete) // 单行语句可省略 {}
     },
-    todoCompletedLength () {
+    todoCompletedNum () {
       // 计算已完成的总数
       return this.todoList.reduce((sum, todo) => sum + Number(todo.isComplete), 0)
     }
     // 虽然单行语句可省略 {}，但是由于箭头函数没有 this，所以这里并不能用单行语句的写法
-    // todoCompletedLength: () => this.todoList.reduce((sum, todo) => sum + Number(todo.isComplete), 0)
+    // todoCompletedNum: () => this.todoList.reduce((sum, todo) => sum + Number(todo.isComplete), 0)
   },
 
   // 单行语句可省略 {}
