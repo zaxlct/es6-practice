@@ -8,6 +8,9 @@
 - 给 npm 设置 taobao 的 registry
 ```bash
 npm install --registry=https://registry.npm.taobao.org
+
+# 安装 vue-cli 3.x 
+npm install -g @vue/cli
 ```
 
 ## 启动项目
