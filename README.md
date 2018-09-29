@@ -12,6 +12,8 @@ npm install --registry=https://registry.npm.taobao.org
 
 ## 启动项目
 ``` bash
+cd es6-practice
+
 # 安装依赖
 npm i
 
